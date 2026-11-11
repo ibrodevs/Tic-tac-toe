@@ -3,46 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a1024" />
-    <meta name="description" content="Крестики-нолики против компьютера — простая игра на HTML, CSS и JavaScript." />
-    <title>Крестики-нолики — игра против бота</title>
+    <meta name="theme-color" content="#8584bd" />
+    <meta name="description" content="Крестики-нолики против бота — яркая игра на HTML, CSS и JavaScript." />
+    <title>Крестики-нолики — XO! CLUB</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <main class="app">
-      <header class="intro">
-        <div class="brand"><span class="brand-icon" aria-hidden="true">✕○</span><span>MINI GAMES</span></div>
-        <p class="eyebrow">ИГРА ПРОТИВ КОМПЬЮТЕРА</p>
-        <h1>Крестики<span class="accent">-</span>нолики<span class="period">.</span></h1>
-        <p class="description">У тебя <strong>крестики</strong>, у бота — <strong>нолики</strong>. Собери три в ряд, чтобы победить!</p>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Шапка сайта">
+        <span class="topbar-note">МИНИ-ИГРА / № 01</span>
+        <a class="wordmark" href="#top" aria-label="XO Club, наверх">XO<span>!</span> CLUB</a>
+        <span class="topbar-note topbar-note-right">ИГРАЙ. РИСКУЙ. ПОБЕЖДАЙ.</span>
       </header>
 
-      <section class="game-panel" aria-label="Игра крестики-нолики">
-        <div class="scoreboard" aria-label="Счёт игр">
-          <div class="score score-player"><span class="score-label">ТЫ <span aria-hidden="true">✕</span></span><strong id="player-score">0</strong></div>
-          <div class="score score-draw"><span class="score-label">НИЧЬИ</span><strong id="draw-score">0</strong></div>
-          <div class="score score-bot"><span class="score-label">БОТ <span aria-hidden="true">○</span></span><strong id="bot-score">0</strong></div>
-        </div>
+      <main class="stage" id="top">
+        <section class="poster" aria-labelledby="page-title">
+          <p class="eyebrow">ИГРА ПРОТИВ КОМПЬЮТЕРА <span aria-hidden="true">✳</span> ОДИН НА ОДИН</p>
+          <h1 id="page-title"><span>КРЕСТИКИ</span><span class="headline-second">НОЛИКИ<span class="exclamation">!</span></span></h1>
 
-        <p class="game-status" id="status" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="status-text">Твой ход — выбирай клетку!</span></p>
+          <svg class="mascot" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M77 171C53 175 38 165 28 141M203 171C225 184 247 175 259 154" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
+            <path d="M27 139L15 126M27 139L10 144M259 153L271 140M259 153L274 160" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+            <path d="M110 224L99 260M173 225L183 260" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
+            <path d="M99 260L75 265M183 260L210 264" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="140" cy="134" r="98" fill="#f9f5f2" stroke="#1a1a1a" stroke-width="8"/>
+            <circle cx="140" cy="134" r="58" fill="#8584bd" stroke="#1a1a1a" stroke-width="8"/>
+            <ellipse cx="111" cy="103" rx="8" ry="12" fill="#1a1a1a"/>
+            <ellipse cx="164" cy="103" rx="8" ry="12" fill="#1a1a1a"/>
+            <path d="M112 136C123 153 155 156 169 137" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+            <path d="M66 46L79 28M80 48L65 30" stroke="#f4ed36" stroke-width="10" stroke-linecap="round"/>
+          </svg>
 
-        <div class="board" aria-label="Игровое поле 3 на 3">
-          <button class="cell" data-index="0" type="button" aria-label="Клетка 1: пусто"></button>
-          <button class="cell" data-index="1" type="button" aria-label="Клетка 2: пусто"></button>
-          <button class="cell" data-index="2" type="button" aria-label="Клетка 3: пусто"></button>
-          <button class="cell" data-index="3" type="button" aria-label="Клетка 4: пусто"></button>
-          <button class="cell" data-index="4" type="button" aria-label="Клетка 5: пусто"></button>
-          <button class="cell" data-index="5" type="button" aria-label="Клетка 6: пусто"></button>
-          <button class="cell" data-index="6" type="button" aria-label="Клетка 7: пусто"></button>
-          <button class="cell" data-index="7" type="button" aria-label="Клетка 8: пусто"></button>
-          <button class="cell" data-index="8" type="button" aria-label="Клетка 9: пусто"></button>
-        </div>
+          <div class="poster-bottom">
+            <p class="description">ТВОИ <strong>КРЕСТИКИ.</strong><br />ЕГО <strong>НОЛИКИ.</strong><br />ТРИ В РЯД — И ТЫ ЛЕГЕНДА.</p>
+            <a class="play-link" href="#game">НАЧАТЬ ИГРУ <span aria-hidden="true">↗</span></a>
+          </div>
+          <span class="poster-caption">НИКАКИХ ОПРАВДАНИЙ. ТОЛЬКО ХОДЫ.</span>
+        </section>
 
-        <button class="restart-button" id="restart" type="button"><span aria-hidden="true">↻</span> Новая игра</button>
-        <p class="tip">Подсказка: выиграть можно по горизонтали, вертикали или диагонали.</p>
-      </section>
-      <footer>Сделано на HTML · CSS · JavaScript</footer>
-    </main>
+        <section class="game-area" id="game" aria-label="Игра крестики-нолики">
+          <div class="game-heading">
+            <span class="mono-label">● LIVE / XO MATCH</span>
+            <span class="game-tag">ТВОЙ ХОД, ЧЕМПИОН</span>
+          </div>
+          <div class="scoreboard" aria-label="Счёт игр">
+            <div class="score score-player"><span class="score-label">ТЫ / ×</span><strong id="player-score">0</strong></div>
+            <div class="score score-draw"><span class="score-label">НИЧЬИ</span><strong id="draw-score">0</strong></div>
+            <div class="score score-bot"><span class="score-label">БОТ / ○</span><strong id="bot-score">0</strong></div>
+          </div>
+          <div class="game-panel">
+            <p class="game-status" id="status" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true">✳</span><span id="status-text">Твой ход — выбирай клетку!</span></p>
+            <div class="board" aria-label="Игровое поле 3 на 3">
+              <button class="cell" data-index="0" type="button" aria-label="Клетка 1: пусто"></button>
+              <button class="cell" data-index="1" type="button" aria-label="Клетка 2: пусто"></button>
+              <button class="cell" data-index="2" type="button" aria-label="Клетка 3: пусто"></button>
+              <button class="cell" data-index="3" type="button" aria-label="Клетка 4: пусто"></button>
+              <button class="cell" data-index="4" type="button" aria-label="Клетка 5: пусто"></button>
+              <button class="cell" data-index="5" type="button" aria-label="Клетка 6: пусто"></button>
+              <button class="cell" data-index="6" type="button" aria-label="Клетка 7: пусто"></button>
+              <button class="cell" data-index="7" type="button" aria-label="Клетка 8: пусто"></button>
+              <button class="cell" data-index="8" type="button" aria-label="Клетка 9: пусто"></button>
+            </div>
+            <button class="restart-button" id="restart" type="button">НОВАЯ ИГРА <span aria-hidden="true">↻</span></button>
+            <p class="tip">3 В РЯД ПО ГОРИЗОНТАЛИ, ВЕРТИКАЛИ ИЛИ ДИАГОНАЛИ.</p>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"><span>XO! CLUB © 2026</span><span>СДЕЛАНО НА HTML / CSS / JS</span></footer>
+    </div>
   </body>
 </html>
