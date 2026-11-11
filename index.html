@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a1024" />
+    <meta name="description" content="Крестики-нолики против компьютера — простая игра на HTML, CSS и JavaScript." />
+    <title>Крестики-нолики — игра против бота</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="intro">
+        <div class="brand"><span class="brand-icon" aria-hidden="true">✕○</span><span>MINI GAMES</span></div>
+        <p class="eyebrow">ИГРА ПРОТИВ КОМПЬЮТЕРА</p>
+        <h1>Крестики<span class="accent">-</span>нолики<span class="period">.</span></h1>
+        <p class="description">У тебя <strong>крестики</strong>, у бота — <strong>нолики</strong>. Собери три в ряд, чтобы победить!</p>
+      </header>
+
+      <section class="game-panel" aria-label="Игра крестики-нолики">
+        <div class="scoreboard" aria-label="Счёт игр">
+          <div class="score score-player"><span class="score-label">ТЫ <span aria-hidden="true">✕</span></span><strong id="player-score">0</strong></div>
+          <div class="score score-draw"><span class="score-label">НИЧЬИ</span><strong id="draw-score">0</strong></div>
+          <div class="score score-bot"><span class="score-label">БОТ <span aria-hidden="true">○</span></span><strong id="bot-score">0</strong></div>
+        </div>
+
+        <p class="game-status" id="status" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="status-text">Твой ход — выбирай клетку!</span></p>
+
+        <div class="board" aria-label="Игровое поле 3 на 3">
+          <button class="cell" data-index="0" type="button" aria-label="Клетка 1: пусто"></button>
+          <button class="cell" data-index="1" type="button" aria-label="Клетка 2: пусто"></button>
+          <button class="cell" data-index="2" type="button" aria-label="Клетка 3: пусто"></button>
+          <button class="cell" data-index="3" type="button" aria-label="Клетка 4: пусто"></button>
+          <button class="cell" data-index="4" type="button" aria-label="Клетка 5: пусто"></button>
+          <button class="cell" data-index="5" type="button" aria-label="Клетка 6: пусто"></button>
+          <button class="cell" data-index="6" type="button" aria-label="Клетка 7: пусто"></button>
+          <button class="cell" data-index="7" type="button" aria-label="Клетка 8: пусто"></button>
+          <button class="cell" data-index="8" type="button" aria-label="Клетка 9: пусто"></button>
+        </div>
+
+        <button class="restart-button" id="restart" type="button"><span aria-hidden="true">↻</span> Новая игра</button>
+        <p class="tip">Подсказка: выиграть можно по горизонтали, вертикали или диагонали.</p>
+      </section>
+      <footer>Сделано на HTML · CSS · JavaScript</footer>
+    </main>
+  </body>
+</html>
